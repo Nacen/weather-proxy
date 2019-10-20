@@ -16,7 +16,7 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET,PUT,POST,DELETE,PATCH,OPTIONS"
   );
-  res.header("Access-Control-Allow-Headers", "Content-Type, content-type");
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
   next();
 });
 
