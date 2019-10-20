@@ -15,7 +15,7 @@ app.post("/", (req, res) => {
   const address = req.body.address;
   const fetchData = async () => {
     try {
-      const geoData = await geo.fetchGeoLocation(address);
+      const geoData = await geo.fetchGeoLocation(address, GEO_APIKEY);
       const weatherData = await weather.fetchWeather(
         geoData.latitude,
         geoData.longitude,
