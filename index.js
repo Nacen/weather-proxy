@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const geo = require("./fetchGeoLocation");
 const weather = require("./fetchWeather");
 
-const GEO_APIKEY = "d931d150398302";
-const WEATHER_APIKEY = "d8a8f8b2ac40d9ace65be29ac279c20b";
+const GEO_APIKEY = process.env.GEO_APIKEY;
+const WEATHER_APIKEY = process.env.WEATHER_APIKEY;
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.post("/weather", (req, res) => {
   const address = req.body.address;
   const fetchData = async () => {
     try {
-      const geoData = await geo.fetchGeoLocation(address, GEO_APIKEY);
+      const geoData = await geo.fetchGeoLocation(address);
       const weatherData = await weather.fetchWeather(
         geoData.latitude,
         geoData.longitude,
