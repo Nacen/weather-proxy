@@ -11,7 +11,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.get("/", (req, res) => res.send("Weather-Proxy"));
+app.get("/", (req, res) => res.send(`Weather Proxy: Weather API KEY ${WEATHER_APIKEY}`));
 app.post("/", (req, res) => {
   const address = req.body.address;
   const fetchData = async () => {
