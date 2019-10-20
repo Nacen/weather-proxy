@@ -11,7 +11,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.post("/weather", (req, res) => {
+app.post("/", (req, res) => {
   const address = req.body.address;
   const fetchData = async () => {
     try {
