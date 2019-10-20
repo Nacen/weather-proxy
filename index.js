@@ -10,7 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.get("/", (req, res) => {
-  res.send("testing");
+  res.redirect('/weather');
 })
 
 app.post("/weather", cors(), (req, res) => {
