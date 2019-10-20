@@ -9,6 +9,9 @@ const WEATHER_APIKEY = process.env.WEATHER_APIKEY;
 const app = express();
 
 app.use(bodyParser.json());
+app.get("/", (req, res) => {
+  res.send("testing");
+})
 
 app.post("/weather", cors(), (req, res) => {
   const address = req.body.address;
